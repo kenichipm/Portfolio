@@ -60,17 +60,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Enable carousel navigation through preview images
-            $('.preview-images img').on('click', function() {
-                $('.preview-images img').removeClass('active');
-                $(this).addClass('active');
+            // Handle carousel indicators click events
+            $('#carouselExampleControls .carousel-indicators li').on('click', function() {
                 var index = $(this).index();
-                $('#carouselExampleControls').carousel(index);
-            });
-
-            // Sync carousel slide with active preview image
-            $('#carouselExampleControls').on('slid.bs.carousel', function () {
-                var index = $('.carousel-item.active').index();
                 $('.preview-images img').removeClass('active');
                 $('.preview-images img').eq(index).addClass('active');
             });
