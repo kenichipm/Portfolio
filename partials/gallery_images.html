@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery Images</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         .carousel-item img {
             width: 100%;
@@ -32,43 +34,52 @@
 <body>
     <div class="container">
         <!-- Carousel Gallery -->
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="item active">
                     <img src="images/Project_Littledogadventure_Stage-1.png" class="d-block w-100" alt="Image 1">
                     <input type="radio" id="radio1" name="preview" checked>
                     <label for="radio1"></label>
                 </div>
-                <div class="carousel-item">
+
+                <div class="item">
                     <img src="images/Project_Littledogadventure_Stage-1.png" class="d-block w-100" alt="Image 2">
                     <input type="radio" id="radio2" name="preview">
                     <label for="radio2"></label>
                 </div>
-                <div class="carousel-item">
+
+                <div class="item">
                     <img src="images/Project_Littledogadventure_Stage-1.png" class="d-block w-100" alt="Image 3">
                     <input type="radio" id="radio3" name="preview">
                     <label for="radio3"></label>
                 </div>
                 <!-- Add more carousel items as needed -->
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
             // Handle carousel indicators click events
-            $('#carouselExampleControls .carousel-indicators li').on('click', function() {
+            $('#myCarousel .carousel-indicators li').on('click', function() {
                 var index = $(this).index();
                 $('.preview-images input[type="radio"]').eq(index).prop('checked', true);
             });
