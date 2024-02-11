@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenichi Matsushita - Online Portfolio</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Adjust the size of the placeholder */
+        #main-body-placeholder {
+            max-width: 800px; /* Adjust as needed */
+            margin: 0 auto;   /* Center the placeholder horizontally */
+            padding: 20px;    /* Add some padding for spacing */
+        }
+    </style>
 </head>
 <body>
 <!-- Navbar -->
@@ -16,7 +24,7 @@
             document.getElementById('navbar-placeholder').innerHTML = data;
     });
 </script>
-<!-- Main Body-->
+<!-- Main Body -->
 <div id="main-body-placeholder"></div>
 <script>
     fetch('partials/gallery_images.html')
