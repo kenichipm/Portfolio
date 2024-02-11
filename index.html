@@ -7,18 +7,17 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
 <!-- Navbar -->
 <div id="navbar-placeholder"></div>
 <script>
-    fetch('navbar.html')
+    fetch('partials/navbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar-placeholder').innerHTML = data;
     });
 </script>
-
-<!-- Main content goes here -->
+<!-- Main Body-->
+Humnagous What
 
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
