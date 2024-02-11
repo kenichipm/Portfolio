@@ -5,54 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery Images</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .carousel-item img {
-            width: 100%;
-            height: auto;
-        }
-        .preview-images input[type="radio"] {
-            display: none;
-        }
-        .preview-images label {
-            display: inline-block;
-            width: 100px;
-            height: auto;
-            cursor: pointer;
-            border: 2px solid transparent;
-            margin-right: 10px;
-        }
-        .preview-images label:hover {
-            border-color: blue;
-        }
-        .preview-images input[type="radio"]:checked + label {
-            border-color: blue;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Carousel Gallery -->
+        <h2>Carousel Example</h2>  
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="images/Project_Littledogadventure_Stage-1.png" class="d-block w-100" alt="Image 1">
-                    <input type="radio" id="radio1" name="preview" checked>
-                    <label for="radio1"></label>
+                    <img src="images/Project_Littledogadventure_Stage-1.png" alt="Los Angeles" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <img src="images/Project_Littledogadventure_Stage-1.png" class="d-block w-100" alt="Image 2">
-                    <input type="radio" id="radio2" name="preview">
-                    <label for="radio2"></label>
+                    <img src="images/Project_Littledogadventure_Stage-2.png" alt="Chicago" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <img src="images/Project_Littledogadventure_Stage-1.png" class="d-block w-100" alt="Image 3">
-                    <input type="radio" id="radio3" name="preview">
-                    <label for="radio3"></label>
+                    <img src="images/Project_Littledogadventure_Stage-3.png" alt="New york" style="width:100%;">
                 </div>
-                <!-- Add more carousel items as needed -->
             </div>
 
             <!-- Left and right controls -->
@@ -69,14 +46,5 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Handle radio button click events
-            $('.preview-images input[type="radio"]').change(function() {
-                var index = $(this).index();
-                $('#myCarousel').carousel(index);
-            });
-        });
-    </script>
 </body>
 </html>
