@@ -33,13 +33,6 @@
     <div class="container">
         <!-- Carousel Gallery -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
@@ -78,10 +71,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Handle carousel indicators click events
-            $('#myCarousel .carousel-indicators li').on('click', function() {
+            // Handle radio button click events
+            $('.preview-images input[type="radio"]').change(function() {
                 var index = $(this).index();
-                $('.preview-images input[type="radio"]').eq(index).prop('checked', true);
+                $('#myCarousel').carousel(index);
             });
         });
     </script>
