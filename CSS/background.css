@@ -1,6 +1,3 @@
-#main-body-placeholder {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 20px;
+body {
     background-color: #333; /* Dark grayish color */
 }
