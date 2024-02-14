@@ -7,7 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         #main-body-placeholder {
-            max-width: 1600px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -26,7 +26,7 @@
 <!-- Main Body -->
 <div id="main-body-placeholder"></div>
 <script>
-    fetch('partials/gallery_images.html')
+    fetch('partials/gallery_images_index.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('main-body-placeholder').innerHTML = data;
