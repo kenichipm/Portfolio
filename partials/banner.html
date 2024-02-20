@@ -1,3 +1,4 @@
+<!-- Banner -->
 <div id="banner-carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -15,13 +16,17 @@
   <style>
     .carousel-item {
       transition: opacity 1s ease-in-out;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+      display: none;
     }
     .carousel-item.active {
       opacity: 1;
-    }
-    .carousel-item-next,
-    .carousel-item-prev {
-      opacity: 0;
+      display: block;
     }
   </style>
   
