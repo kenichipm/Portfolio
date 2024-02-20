@@ -12,3 +12,32 @@
     </div>
   </div>
   
+  <style>
+    .carousel-item {
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel-item.active {
+      opacity: 1;
+    }
+    .carousel-item-next,
+    .carousel-item-prev {
+      opacity: 0;
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var carousel = document.querySelector('#banner-carousel');
+      var carouselItems = carousel.querySelectorAll('.carousel-item');
+      var currentIndex = 0;
+  
+      function nextSlide() {
+        carouselItems[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        carouselItems[currentIndex].classList.add('active');
+      }
+  
+      setInterval(nextSlide, 5000); // Switch slides every 5 seconds
+    });
+  </script>
+  
