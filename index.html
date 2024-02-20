@@ -31,14 +31,50 @@
 </script>
 -->
 <!-- Main Body -->
-<div id="main-body-placeholder"></div>
-<script>
-    fetch('partials/index_main.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('main-body-placeholder').innerHTML = data;
-    });
-</script>
+<div id="main-body-placeholder">
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Profile Information -->
+            <div class="col-md-4 text-center">
+                <img src="images/Portfolio_Kenichi.png" alt="Profile Icon" width="260" height="260">
+            </div>            
+            <div class="col-md-8">
+                <h2>Kenichi Matsushita</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget tortor quam. Proin ultrices urna quam, nec fermentum justo tempor in. Suspendisse potenti. Donec bibendum, justo non eleifend dignissim, nulla justo ullamcorper eros, nec malesuada nisi metus nec eros.</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <!-- Skills and Software -->
+            <div class="col-md-12">
+                <h3>Skills and Software</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Software</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Web Development</td>
+                            <td>HTML, CSS, JavaScript</td>
+                        </tr>
+                        <tr>
+                            <td>Programming</td>
+                            <td>Python, Java, C++</td>
+                        </tr>
+                        <tr>
+                            <td>Graphic Design</td>
+                            <td>Adobe Photoshop, Illustrator</td>
+                        </tr>
+                        <!-- Add more skills and software as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- 
 <div id="main-body-placeholder"></div>
 <script>
