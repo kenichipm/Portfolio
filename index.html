@@ -27,10 +27,20 @@
 <script>
     // Function to load content into the main body
     function loadContent(page) {
-        fetch(`partials/${page}.html`)
-            .then(response => response.text())
+        fetch(`partials/${page.toLowerCase()}.html`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('File not found');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('main-body-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading content:', error.message);
+                // Display an error message in the main body
+                document.getElementById('main-body-placeholder').innerHTML = '<h2>Error loading content</h2>';
             });
     }
 
