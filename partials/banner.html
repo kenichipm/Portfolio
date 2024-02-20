@@ -42,9 +42,11 @@
         carouselItems[currentIndex].classList.add('active');
       }
   
-      nextSlide(); // Show the first slide initially
+      function startCarousel() {
+        setInterval(nextSlide, 5000); // Switch slides every 5 seconds
+      }
   
-      setInterval(nextSlide, 5000); // Switch slides every 5 seconds
+      startCarousel(); // Start the carousel
     });
   </script>
   
