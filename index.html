@@ -22,19 +22,32 @@
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar-placeholder').innerHTML = data;
-    });
-</script>
-<!-- Banner -->
 
-<!-- Main Body -->
-<div id="main-body-placeholder"></div>
-<script>
-    fetch('partials/index_gallery_images.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('main-body-placeholder').innerHTML = data;
+            // Add event listener to the "Projects" link
+            document.querySelector('#navbar-placeholder a[href="pages/projects.html"]').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                fetch('pages/projects.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('main-body-placeholder').innerHTML = data;
+                    });
+            });
+
+            // Add event listener to the website logo
+            document.querySelector('#navbar-placeholder img[src="images/favicon.png"]').parentElement.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                fetch('partials/index_gallery_images.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('main-body-placeholder').innerHTML = data;
+                    });
+            });
     });
 </script>
+<!-- Main Body -->
+<div id="main-body-placeholder">
+    <!-- Main Body Content Goes Here -->
+</div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
