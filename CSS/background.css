@@ -1,4 +1,5 @@
 body {
-    background: rgb(110,110,110);
-    background: linear-gradient(90deg, rgba(110,110,110,1) 5%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(110,110,110,1) 95%);
+    background-image: url('background-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
