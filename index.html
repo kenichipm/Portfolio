@@ -17,54 +17,27 @@
 <body>
 <!-- Navbar -->
 <div id="navbar-placeholder"></div>
-<!-- Main Body -->
-<div id="main-body-placeholder"></div>
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script>
-    // Function to load content into the main body
-    function loadContent(page) {
-        fetch(`partials/${page}.html`)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('main-body-placeholder').innerHTML = data;
-            });
-    }
-
-    // Load the navbar
     fetch('partials/navbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar-placeholder').innerHTML = data;
-
-            // Add click event listeners to navbar links
-            const navbarLinks = document.querySelectorAll('.nav-link');
-            navbarLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    // Prevent the default link behavior
-                    event.preventDefault();
-                    // Get the target page from the href attribute
-                    const page = this.getAttribute('href');
-                    // Load the content of the target page
-                    loadContent('Projects');
-                });
-            });
-
-            // Add click event listener to the logo
-            const logo = document.querySelector('.navbar-brand img');
-            logo.addEventListener('click', function(event) {
-                // Prevent the default link behavior
-                event.preventDefault();
-                // Load the home page content
-                loadContent('home');
-            });
     });
-
-    // Load default content
-    loadContent('index_gallery_images');
 </script>
+<!-- Banner -->
+
+<!-- Main Body -->
+<div id="main-body-placeholder"></div>
+<script>
+    fetch('partials/index_gallery_images.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('main-body-placeholder').innerHTML = data;
+    });
+</script>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
