@@ -25,7 +25,14 @@
     });
 </script>
 <!-- Banner -->
-
+<div id="banner-placeholder"></div>
+<script>
+    fetch('partials/banner.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('banner-placeholder').innerHTML = data;
+    });
+</script>
 <!-- Main Body -->
 <div id="main-body-placeholder"></div>
 <script>
