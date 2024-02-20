@@ -2,6 +2,6 @@
     max-width: 1600px;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(90deg, rgba(110,110,110,0) 0%, rgba(255,255,255,1) 5%, rgba(255,255,255,1) 95%, rgba(110,110,110,0) 100%);
+    background: linear-gradient(90deg, rgba(110,110,110,0) 0%, rgba(172,172,172,0) 2%, rgba(255,255,255,1) 4%, rgba(255,255,255,1) 96%, rgba(226,226,226,0) 98%, rgba(110,110,110,0) 100%);
     min-height: 100vh; /* Set minimum height to viewport height */
 }
