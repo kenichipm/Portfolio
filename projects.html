@@ -29,7 +29,12 @@
 <!-- Main Body -->
 <div id="main-body-placeholder"></div>
 <script>
-    fetch('partials/projects_gallery.html')
+    fetch('partials/projects_gallery_game-1.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('main-body-placeholder').innerHTML = data;
+    });
+    fetch('partials/projects_gallery_youtube.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('main-body-placeholder').innerHTML = data;
