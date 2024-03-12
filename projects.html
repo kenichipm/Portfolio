@@ -29,19 +29,18 @@
 <!-- Main Body -->
 <div id="main-body-placeholder">
     <script>
+        // Fetch the first gallery HTML
         fetch('partials/projects_gallery_game-1.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('main-body-placeholder').innerHTML = data;
+                document.getElementById('main-body-placeholder').innerHTML += data;
         });
-    </script>
-</div>
-<div id="main-body-placeholder">
-    <script>
+
+        // Fetch the second gallery HTML
         fetch('partials/projects_gallery_youtube.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('main-body-placeholder').innerHTML = data;
+                document.getElementById('main-body-placeholder').innerHTML += data;
         });
     </script>
 </div>
