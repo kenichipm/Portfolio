@@ -32,6 +32,34 @@
         .modal-lg {
             max-width: 90%;
         }
+
+        /* Navigation arrows style */
+        .modal-navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-navigation:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-navigation.prev {
+            left: 10px;
+        }
+
+        .modal-navigation.next {
+            right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -61,6 +89,12 @@
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
+                <div class="modal-navigation prev" onclick="prevImage()">
+                    &lt;
+                </div>
+                <div class="modal-navigation next" onclick="nextImage()">
+                    &gt;
+                </div>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -70,10 +104,6 @@
                     <div class="image-container">
                         <img id="modalImage" src="" alt="Modal Image" class="img-fluid">
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="prevImage()">Previous</button>
-                    <button type="button" class="btn btn-secondary" onclick="nextImage()">Next</button>
                 </div>
             </div>
         </div>
