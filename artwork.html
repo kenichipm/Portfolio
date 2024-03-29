@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Gallery</title>
+    <style>
+        /* Styles for the gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 10px;
+            margin: 20px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+    </script>
+    <!-- Main Body -->
+    <!-- Gallery -->
+    <div class="gallery">
+        <img src="images/artwork_a-1.jpg" alt="Artwork 1" onclick="zoomImage(this)">
+        <img src="images/artwork_a-1.jpg" alt="Artwork 2" onclick="zoomImage(this)">
+        <img src="images/artwork_a-1.jpg" alt="Artwork 3" onclick="zoomImage(this)">
+    </div>
+
+    <!-- JavaScript for zoom functionality -->
+    <script>
+        function zoomImage(image) {
+            if (image.style.transform === "scale(1.1)") {
+                image.style.transform = "scale(1)";
+            } else {
+                image.style.transform = "scale(1.1)";
+            }
+        }
+    </script>
+</body>
+</html>
