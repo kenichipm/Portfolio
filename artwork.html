@@ -27,6 +27,16 @@
         .gallery img:hover {
             transform: scale(1.1);
         }
+
+        /* Styles for the modal */
+        .modal-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .modal-dialog {
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
@@ -44,22 +54,41 @@
         <div class="container mt-5">
             <!-- Picture -->
             <div class="gallery">
-                <img src="images/artwork_a-1.jpg" alt="Artwork 1" onclick="zoomImage(this)">
-                <img src="images/artwork_a-1.jpg" alt="Artwork 2" onclick="zoomImage(this)">
-                <img src="images/artwork_a-1.jpg" alt="Artwork 3" onclick="zoomImage(this)">
+                <img src="images/artwork_a-1.jpg" alt="Artwork 1" onclick="openModal(this)">
+                <img src="images/artwork_a-1.jpg" alt="Artwork 2" onclick="openModal(this)">
+                <img src="images/artwork_a-1.jpg" alt="Artwork 3" onclick="openModal(this)">
             </div>
         </div>
     </div>
 
-    <!-- JavaScript for zoom functionality -->
+    <!-- Modal for displaying larger images -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="Modal Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for opening modal with larger image -->
     <script>
-        function zoomImage(image) {
-            if (image.style.transform === "scale(1.1)") {
-                image.style.transform = "scale(1)";
-            } else {
-                image.style.transform = "scale(1.1)";
-            }
+        function openModal(image) {
+            var modalImage = document.getElementById('modalImage');
+            modalImage.src = image.src;
+            $('#imageModal').modal('show');
         }
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
