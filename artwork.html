@@ -28,12 +28,13 @@
             transform: scale(1.1);
         }
 
-        /* Custom style to adjust modal dialog size */
-        .modal-lg {
-            max-width: 90%;
+        /* Styles for the modal */
+        .modal-content {
+            max-width: 800px;
+            margin: auto;
+            position: relative; /* Ensure relative positioning for the navigation buttons */
         }
 
-        /* Navigation arrows style */
         .modal-navigation {
             position: absolute;
             top: 50%;
@@ -47,6 +48,7 @@
             line-height: 40px;
             cursor: pointer;
             transition: background-color 0.3s;
+            z-index: 999; /* Ensure the buttons are displayed on top */
         }
 
         .modal-navigation:hover {
@@ -80,30 +82,23 @@
                 <img src="images/artwork_a-1.jpg" alt="Artwork 1" onclick="openModal(this)">
                 <img src="images/artwork_a-2.jpg" alt="Artwork 2" onclick="openModal(this)">
                 <img src="images/artwork_a-3.jpg" alt="Artwork 3" onclick="openModal(this)">
-                <!-- Add more images here -->
             </div>
         </div>
     </div>
 
     <!-- Modal for displaying larger images -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-navigation prev" onclick="prevImage()">
-                    &lt;
-                </div>
-                <div class="modal-navigation next" onclick="nextImage()">
-                    &gt;
-                </div>
+                <button type="button" class="modal-navigation prev" onclick="prevImage()">&lt;</button>
+                <button type="button" class="modal-navigation next" onclick="nextImage()">&gt;</button>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <div class="image-container">
-                        <img id="modalImage" src="" alt="Modal Image" class="img-fluid">
-                    </div>
+                    <img id="modalImage" src="" alt="Modal Image" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -111,24 +106,29 @@
 
     <!-- JavaScript for opening modal with larger image -->
     <script>
-        var images = document.querySelectorAll('.gallery img');
-        var currentIndex = 0;
+        var images = [];
+        var currentImageIndex = 0;
 
+        // Function to open modal with clicked image
         function openModal(image) {
-            currentIndex = Array.from(images).indexOf(image);
             var modalImage = document.getElementById('modalImage');
             modalImage.src = image.src;
             $('#imageModal').modal('show');
+            // Storing all images for navigation
+            images = Array.from(document.querySelectorAll('.gallery img'));
+            currentImageIndex = images.indexOf(image);
         }
 
+        // Function to switch to the previous image
         function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById('modalImage').src = images[currentIndex].src;
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById('modalImage').src = images[currentImageIndex].src;
         }
 
+        // Function to switch to the next image
         function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById('modalImage').src = images[currentIndex].src;
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById('modalImage').src = images[currentImageIndex].src;
         }
     </script>
 
