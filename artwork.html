@@ -29,12 +29,6 @@
         }
 
         /* Styles for the modal */
-        .modal-content {
-            max-width: 800px;
-            margin: auto;
-            position: relative; /* Ensure relative positioning for the navigation buttons */
-        }
-
         .modal-navigation {
             position: absolute;
             top: 50%;
@@ -88,7 +82,7 @@
 
     <!-- Modal for displaying larger images -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Add modal-lg class here -->
             <div class="modal-content">
                 <button type="button" class="modal-navigation prev" onclick="prevImage()">&lt;</button>
                 <button type="button" class="modal-navigation next" onclick="nextImage()">&gt;</button>
