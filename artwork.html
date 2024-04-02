@@ -9,26 +9,21 @@
     <link rel="stylesheet" href="CSS/background.css">
     <link rel="stylesheet" href="CSS/placeholder.css">
     <style>
-        /* Styles for the gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             grid-gap: 10px;
             margin: 20px;
         }
-        
         .gallery img {
             width: 100%;
             height: auto;
             cursor: pointer;
             transition: transform 0.2s;
         }
-        
         .gallery img:hover {
             transform: scale(1.1);
         }
-
-        /* Styles for the modal */
         .modal-navigation {
             position: absolute;
             top: 50%;
@@ -42,22 +37,17 @@
             line-height: 40px;
             cursor: pointer;
             transition: background-color 0.3s;
-            z-index: 999; /* Ensure the buttons are displayed on top */
+            z-index: 999;
         }
-
         .modal-navigation:hover {
             background-color: rgba(0, 0, 0, 0.7);
         }
-
         .modal-navigation.prev {
             left: 10px;
         }
-
         .modal-navigation.next {
             right: 10px;
         }
-
-        /* Limiting maximum width of modal dialog */
         .modal-lg {
             max-width: 75%;
         }
