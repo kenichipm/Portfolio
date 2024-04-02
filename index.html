@@ -101,7 +101,21 @@
     <!-- Picture -->
     <div id="main-body-placeholder">
         <div class="container mt-5">
-            <img src="images/index_contact-1.png" alt="Your Picture" class="img-fluid" width="50%">
+            <!-- Contact -->
+            <h2>Contacts</h2>
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <a href="https://www.youtube.com/@K1PM"> <img src="images/index_contact-1.png" alt="Your Picture" class="img-fluid" width="50%"> </a>
+            </div>
+            <!-- Projects -->
+            <h2>Projects (2024) (Projects)</h2>
+            <script>
+                // Fetch the game gallery HTML
+                fetch('partials/projects_gallery_game-1.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('main-body-placeholder').innerHTML += data;
+                });
+            </script>
             <!-- Picture -->
             <h2>3D Models (Artwork)</h2>
             <div class="gallery">
